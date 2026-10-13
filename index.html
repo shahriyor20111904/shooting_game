@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neon Runner 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="gameWrapper">
+    <canvas id="game"></canvas>
+
+    <div id="hud">
+      <div class="hud-item">DIST <span id="hudDist">0</span> м</div>
+      <div class="hud-item" id="hudCoinsBox">🪙 <span id="hudCoins">0</span></div>
+      <div class="hud-item">BEST <span id="hudBest">0</span> м</div>
+    </div>
+
+    <button id="soundBtn" class="icon-btn" title="Звук">♪</button>
+
+    <div class="overlay" id="startScreen">
+      <h1>NEON RUNNER 3D</h1>
+      <p>Беги по неоновой трассе, уклоняйся от препятствий, собирай монеты!</p>
+      <p>
+        <span class="key">←</span> <span class="key">→</span> / <span class="key">A</span> <span class="key">D</span> — смена полосы<br>
+        <span class="key">Space</span> — прыжок<br>
+        <span class="key">↓</span> / <span class="key">S</span> — скольжение<br>
+        <span class="key">P</span> / <span class="key">Esc</span> — пауза
+      </p>
+      <button class="btn" id="startBtn">PLAY</button>
+    </div>
+
+    <div class="overlay hidden" id="pauseScreen">
+      <h1>ПАУЗА</h1>
+      <p>Нажми <span class="key">P</span> или <span class="key">Esc</span> для продолжения</p>
+      <button class="btn" id="resumeBtn">RESUME</button>
+    </div>
+
+    <div class="overlay hidden" id="gameOverScreen">
+      <h1>GAME OVER</h1>
+      <div class="new-record" id="newRecord" style="display:none;">🏆 НОВЫЙ РЕКОРД! 🏆</div>
+      <div class="final-score">ДИСТАНЦИЯ: <span id="finalDist">0</span> м</div>
+      <div class="final-coins">СОБРАНО: <span id="finalCoins">0</span> 🪙</div>
+      <p>Лучший результат: <span id="finalBest">0</span> м</p>
+      <button class="btn" id="restartBtn">RESTART</button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
